@@ -1,0 +1,95 @@
+/* This styles the navbar and the bootstrap containers */
+body{
+    margin: 0px;
+}
+main{
+    margin-left: 20px;
+    margin-right: 0px;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    background-color: pink;
+}
+
+.navbar ul{
+    list-style-type: none;
+    margin: 0px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
+    padding-right: 15px;
+}
+ul a{
+    color: black;
+    text-decoration: none;
+    padding: auto;
+    text-align: center;
+    padding: 15px;
+    justify-content: baseline;
+    border: 1px solid black;
+    border-radius: 10%;
+}
+
+.logoName a{
+    padding: 0px;
+    margin-right: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
+    text-decoration: none;
+}
+
+.logoName h1{
+    display: flex;
+    align-items: center;
+}
+.navbar li a:hover{
+    background-color: rgb(255, 164, 179);
+}
+
+.navbar li{
+    display: flex;
+    
+}
+
+.navbar img{
+    padding: 0px;
+    margin-right: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navbar h1{
+    text-align: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 600;
+    font-size:x-large;
+    justify-content:end;
+    align-items: center;
+    margin-left: 0px;
+    padding: 10px;
+    -webkit-text-stroke: .5px black;
+    color: palevioletred;
+    padding: 0px;
+}
+
+
+main h3{
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+    font-family:Helvetica, sans-serif;
+    margin-top:15px;
+}
+
+.container :hover{
+opacity: 90%;
+}
+.container h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
