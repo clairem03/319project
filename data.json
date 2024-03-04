@@ -1,35 +1,35 @@
 {
-    "movies": [
+    "categories": [
         {
-            "movieId": "1234",
+            "catID": "1",
             "title": "City",
-            "year": 2012,
-            "url": "./images/chicago.jpg"
+            "url": "./images/city.jpg"
         },
         {
-            "movieId": "A124",
-            "title": "The Last Airbender",
-            "year": 2005,
-            "url": "https://freepngimg.com/save/37589-aang-transparent-background/480x486"
+            "catID": "2",
+            "title": "Tropical",
+            "url": "./images/tropical.png"
         },
         {
-            "movieId": "76788",
-            "title": "The Iron Giant",
-            "year": 1999,
-            "url": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/The_Iron_Giant_poster.JPG/220px-The_Iron_Giant_poster.JPG"
+            "catID": "3",
+            "title": "Mountain",
+            "url": "./images/mountain.JPG"
         },
         {
-            "movieId": "BB124",
-            "title": "Mulan",
-            "year": 1998,
-            "url": "https://freepngimg.com/thumb/disney/113364-picture-mulan-disney-free-photo.png"
+            "catID": "4",
+            "title": "Coastal",
+            "url": "./images/coastal.JPG"
         },
         
         {
-            "movieId": "12346",
-            "title": "Cool",
-            "year": 2020,
-            "url": "https://freepngimg.com/thumb/harry_potter/2-2-harry-potter-transparent.png"
+            "catID": "5",
+            "title": "Countryside",
+            "url": "./images/countryside.JPG"
+        },
+        {
+            "catID": "6",
+            "title": "Historic",
+            "url": "./images/historic.JPG"
         }
     ]
 }

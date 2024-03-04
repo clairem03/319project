@@ -93,3 +93,9 @@ opacity: 90%;
     justify-content: center;
     align-items: center;
 }
+
+.card-img-top {
+    width: 100%; /* Set the width to 100% to make the image fill the container */
+    height: 375px; /* Set the desired height for the images */
+    object-fit: cover; /* Scale the image while preserving its aspect ratio */
+}
