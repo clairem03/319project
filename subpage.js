@@ -20,7 +20,7 @@ function loadCats(myLocations) {
         AddCardMovie.innerHTML = `
 <div id=${card} class="card shadow-sm">
     <a href="${subpage}">
-        <img src=${url} class="card-img-top" alt="..."></img>
+        <img src=${url} width = "50%" class="card-img-top" alt="..."></img>
     </a>
     
     <div class="card-body">

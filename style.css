@@ -83,9 +83,16 @@ main h3{
     align-items: center;
     font-family:Helvetica, sans-serif;
     margin-top:15px;
+    margin-left: 90px;
+    padding:10px;
+   
 }
 
-.container :hover{
+.col{
+   
+}
+
+.col :hover{
 opacity: 90%;
 }
 .container h2{
@@ -99,3 +106,27 @@ opacity: 90%;
     height: 375px; /* Set the desired height for the images */
     object-fit: cover; /* Scale the image while preserving its aspect ratio */
 }
+
+/* styling for the safety, cost, and rating row */
+.row ul{
+    list-style: none;
+    display:flex;
+    justify-content:end;
+    gap: 5rem;
+    
+}
+.row li{
+    border: 2px solid black;
+    margin-right: 200px;
+    padding: 9px;
+    border-radius: 15%;
+}
+
+/* makes it so the subpage containers have 
+space between them vertically */
+.col{
+    
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
