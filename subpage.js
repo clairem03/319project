@@ -1,25 +1,34 @@
-fetch("./data.json")
+fetch("./subpage.json")
     .then(response => response.json())
     .then(myLocations => loadCats(myLocations));
+
+//we need a function that gets what supbage it is
+//so it can call myLocations.(correct subpage)
+//so it grabs the right json data
+//something like let subpage = (correct subpage)
+//then we can call myLocations.subpage[i]
+
+//also i have no idea why only London works 
 
 function loadCats(myLocations) {
     var CardMovie = document.getElementById("col");
     var checkboxes = [];
     var cards = [];
 
-    for (var i = 0; i < myLocations.categories.length; i++) {
+    for (var i = 0; i < myLocations.city.length; i++) {
         let checkbox = "checkbox" + i.toString();
         let card = "card" + i.toString();
 
-        let title = myLocations.categories[i].title;
-        let url = myLocations.categories[i].url;
+        let title = myLocations.city[i].name;
+        let url = myLocations.city[i].src;
         let subpage = getSubpageUrl(title);
+        let safety = myLocations.city[i].safety;
 
         let AddCardMovie = document.createElement("div");
         AddCardMovie.classList.add("col");
         AddCardMovie.innerHTML = `
 <div id=${card} class="card shadow-sm">
-    <a href="${subpage}">
+    
         <img src=${url} width = "50%" class="card-img-top" alt="..."></img>
     </a>
     
@@ -27,6 +36,7 @@ function loadCats(myLocations) {
         <h2 class="card-text"> <strong>${title}</strong>
         <div class="d-flex justify-content-center align-items-center">
         
+        <p>${safety}</p>
         </div>
     </div>
 </div>
