@@ -1,0 +1,149 @@
+{
+    "city": [
+
+        {
+            "name" : "New York City",
+            "safety": "7/10",
+            "cost": "$$",
+            "rating": "7/10",
+            "src": "./images/New York City.jpg"
+        },
+        {
+            "name": "Tokyo",
+            "safety": "8/10",
+            "cost": "$$$$$",
+            "rating": "8/10",
+            "src": "./images/Toyko.jpg"
+        },
+        {
+            "name": "London",
+            "safety": "7/10",
+            "cost": "$$$$$",
+            "rating": "6/10",
+            "src": "./images/London.jpg"
+        }
+    ],
+    
+    "tropical": [
+
+        {
+            "name": "Bali",
+            "safety": "3/10",
+            "cost": "$$$$$",
+            "rating": "3/10",
+            "src": "./images/Bali.jpg"
+        },
+        {
+            "name": "Thailand",
+            "safety": "8/10",
+            "cost": "$$$$",
+            "rating": "9/10",
+            "src": "./images/Thailand.jpg"
+        },
+        {
+            "name": "Hawaii",
+            "safety": "7/10",
+            "cost": "$$$$$",
+            "rating": "4/10",
+            "src": "./images/Hawaii.jpg"
+        }
+    ],
+
+    "mountains": [
+        {
+            "name": "Rocky Mountains",
+            "safety": "10/10",
+            "cost": "$$",
+            "rating": "10/10",
+            "src": "./images/rockyMountains.jpg"
+        },
+        {
+            "name": "The Swiss Alps",
+            "safety": "10/10",
+            "cost": "$$$$",
+            "rating": "10/10",
+            "src": "./images/swissAlps.jpg"
+        },
+        {
+            "name": "Mount Fuji",
+            "safety": "7/10",
+            "cost": "$$$$$",
+            "rating": "6/10",
+            "src": "./images/mountFuji.jpg"
+        }
+    ],
+
+    "costal": [
+        {
+            "name": "Cape Cod",
+            "safety": "9/10",
+            "cost": "$$",
+            "rating": "10/10",
+            "src": "./images/capeCod.jpg"
+        },
+        {
+            "name": "Gulf Coast",
+            "safety": "6/10",
+            "cost": "$$",
+            "rating": "8/10",
+            "src": "./images/gulfCoast.jpg"
+        },
+        {
+            "name": "New Zealand",
+            "safety": "5/10",
+            "cost": "$$$$",
+            "rating": "6/10",
+            "src": "./images/newZealand.jpg"
+        }
+    ],
+
+    "countryside":[
+        {
+            "name": "The Ozarks",
+            "safety": "5/10",
+            "cost": "$$",
+            "rating": "5/10",
+            "src": "./images/ozarks.jpg"
+        },
+        {
+            "name": "Tuscany",
+            "safety": "8/10",
+            "cost": "$$$$$",
+            "rating": "7/10",
+            "src": "./images/tuscany.jpg"
+        },
+        {
+            "name": "Yellowstone National Park",
+            "safety": "7/10",
+            "cost": "$$",
+            "rating": "8/10",
+            "src": "./images/yellowstone.jpg"
+        }
+    ],
+
+    "historic": [
+        {
+            "name": "Rome",
+            "safety": "6/10",
+            "cost": "$$$$$",
+            "rating": "6/10",
+            "src": "./images/rome.jpg"
+        },
+        {
+            "name": "Great Wall of China",
+            "safety": "3/10",
+            "cost": "$$$$$",
+            "rating": "3/10",
+            "src": "./images/greatWall.jpg"
+        },
+        {
+            "name": "Machu Picchu",
+            "safety": "7/10",
+            "cost": "$$$$",
+            "rating": "8/10",
+            "src": "./images/machu.jpg"
+        }
+    ]
+
+
+}
