@@ -88,10 +88,6 @@ main h3{
    
 }
 
-.col{
-   
-}
-
 .col :hover{
 opacity: 90%;
 }
@@ -122,11 +118,43 @@ opacity: 90%;
     border-radius: 15%;
 }
 
-/* makes it so the subpage containers have 
-space between them vertically */
 .col{
     
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+  }
+  
+  .about-content {
+    max-width: 800px;
+    margin-bottom: 50px; /* Add some space between sections */
+  }
+  
+  .section-title {
+    text-align: center;
+  }
+  
+  .creators-container {
+    display: flex;
+    justify-content: center; /* Center creator sections horizontally */
+  }
+  
+  .creator {
+    margin: 0 20px; /* Add some space between creators */
+    text-align: center;
+  }
+  
+  .creator-img img {
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+
+  
+  
