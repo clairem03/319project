@@ -49,7 +49,7 @@
         }
     ],
 
-    "mountains": [
+    "mountain": [
         {
             "name": "Rocky Mountains",
             "safety": "10/10",

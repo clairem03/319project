@@ -11,36 +11,36 @@ fetch("./subpage.json")
 //also i have no idea why only London works 
 
 function loadCats(myLocations) {
-    var CardMovie = document.getElementById("col");
-    var checkboxes = [];
-    var cards = [];
+    let CardMovie = document.getElementById("sub");
+    let checkboxes = [];
+    let cards = [];
 
-    for (var i = 0; i < myLocations.city.length; i++) {
+    //get the id of the body
+    let page = document.body.id;
+    //get the subset of the JSON data we want
+    let jsonData = myLocations[page];
+
+    for (var i = 0; i < jsonData.length; i++) {
         let checkbox = "checkbox" + i.toString();
         let card = "card" + i.toString();
 
-        let title = myLocations.city[i].name;
-        let url = myLocations.city[i].src;
-        let subpage = getSubpageUrl(title);
-        let safety = myLocations.city[i].safety;
+        let title = jsonData[i].name;
+        let url = jsonData[i].src;
+       
+        let safety = jsonData[i].safety;
 
         let AddCardMovie = document.createElement("div");
-        AddCardMovie.classList.add("col");
+        AddCardMovie.classList.add("sub");
+
+        // i tried to copy the html to have it 
+        // create a bunch of them but it isn't working
         AddCardMovie.innerHTML = `
-<div id=${card} class="card shadow-sm">
-    
-        <img src=${url} width = "50%" class="card-img-top" alt="..."></img>
-    </a>
-    
-    <div class="card-body">
-        <h2 class="card-text"> <strong>${title}</strong>
-        <div class="d-flex justify-content-center align-items-center">
-        
-        <p>${safety}</p>
-        </div>
-    </div>
-</div>
-`;
+        <ul>
+          <li id="pic" ><h3>${title}</h3><img src="${src}" width="100%"></li>
+          <li><h3>${safety}</h3></li>
+          <li><h3>${cost}</h3></li>
+          <li><h3>${rating}</h3></li>
+        </ul>`;
 
         CardMovie.appendChild(AddCardMovie);
         let cbox = document.getElementById(checkbox);
@@ -60,27 +60,3 @@ function loadCats(myLocations) {
     });
 }
 
-function getSubpageUrl(category) {
-    // Convert category to lowercase for consistency
-    category = category.toLowerCase();
-    // Generate subpage URL based on category
-    switch (category) {
-        case "city":
-            return "city.html";
-        case "tropical":
-            return "tropical.html";
-        case "mountain":
-            return "mountain.html";
-        case "coastal":
-            return "coastal.html";
-        case "historic":
-            return "historic.html";
-        case "countryside":
-            return "countryside.html";
-        
-        // Add more cases for other categories if needed
-        default:
-            // Default to a generic page
-            return "index.html";
-    }
-}

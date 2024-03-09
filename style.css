@@ -142,8 +142,7 @@ opacity: 90%;
   .creators-container {
     display: flex;
     justify-content: space-evenly; /* Center creator sections horizontally */
-    /* margin-left: 20px;
-    margin-right: 20px; */
+
   }
   
   .creator {
@@ -160,6 +159,39 @@ opacity: 90%;
   .creator-info h3{
     justify-content: space-evenly;
   }
+
+
+
+
+  /* style for the subpages */
+  .sub ul{
+    list-style: none;
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    gap: 5rem;
+    margin-right: 300px;
+  }
+
+
+  #pic{
+    border: 2px solid black;
+    /* margin-right: 200px; */
+    padding: 9px;
+  }
+  #pic h3{
+    display: flex;
+    justify-content: center;
+  }
+
+  /* styling for the subpage li img elemements */
+  .sub li img{
+    width: 100%; /* Set the width to 100% to make the image fill the container */
+    height: 250px; /* Set the desired height for the images */
+    object-fit: cover;
+    gap: 2rem;
+  }
+ 
 
   
   
