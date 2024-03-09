@@ -6,21 +6,21 @@
             "safety": "7/10",
             "cost": "$$",
             "rating": "7/10",
-            "src": "./images/New York City.JPG"
+            "url": "./images/New York City.JPG"
         },
         {
             "name": "Tokyo",
             "safety": "8/10",
             "cost": "$$$$$",
             "rating": "8/10",
-            "src": "./images/Toyko.jpg"
+            "url": "./images/Toyko.jpg"
         },
         {
             "name": "London",
             "safety": "7/10",
             "cost": "$$$$$",
             "rating": "6/10",
-            "src": "./images/London.jpg"
+            "url": "./images/London.jpg"
         }
     ],
     
@@ -31,21 +31,21 @@
             "safety": "3/10",
             "cost": "$$$$$",
             "rating": "3/10",
-            "src": "./images/Bali.jpg"
+            "url": "./images/Bali.jpg"
         },
         {
             "name": "Thailand",
             "safety": "8/10",
             "cost": "$$$$",
             "rating": "9/10",
-            "src": "./images/Thailand.jpg"
+            "url": "./images/Thailand.jpg"
         },
         {
             "name": "Hawaii",
             "safety": "7/10",
             "cost": "$$$$$",
             "rating": "4/10",
-            "src": "./images/Hawaii.jpg"
+            "url": "./images/Hawaii.jpg"
         }
     ],
 
@@ -55,21 +55,21 @@
             "safety": "10/10",
             "cost": "$$",
             "rating": "10/10",
-            "src": "./images/rockyMountains.jpg"
+            "url": "./images/rockyMountains.jpg"
         },
         {
             "name": "The Swiss Alps",
             "safety": "10/10",
             "cost": "$$$$",
             "rating": "10/10",
-            "src": "./images/swissAlps.jpg"
+            "url": "./images/swissAlps.jpg"
         },
         {
             "name": "Mount Fuji",
             "safety": "7/10",
             "cost": "$$$$$",
             "rating": "6/10",
-            "src": "./images/mountFuji.jpg"
+            "url": "./images/mountFuji.jpg"
         }
     ],
 
@@ -79,21 +79,21 @@
             "safety": "9/10",
             "cost": "$$",
             "rating": "10/10",
-            "src": "./images/capeCod.jpg"
+            "url": "./images/capeCod.jpg"
         },
         {
             "name": "Gulf Coast",
             "safety": "6/10",
             "cost": "$$",
             "rating": "8/10",
-            "src": "./images/gulfCoast.jpg"
+            "url": "./images/gulfCoast.jpg"
         },
         {
             "name": "New Zealand",
             "safety": "5/10",
             "cost": "$$$$",
             "rating": "6/10",
-            "src": "./images/newZealand.jpg"
+            "url": "./images/newZealand.jpg"
         }
     ],
 
@@ -103,21 +103,21 @@
             "safety": "5/10",
             "cost": "$$",
             "rating": "5/10",
-            "src": "./images/ozarks.jpg"
+            "url": "./images/ozarks.jpg"
         },
         {
             "name": "Tuscany",
             "safety": "8/10",
             "cost": "$$$$$",
             "rating": "7/10",
-            "src": "./images/tuscany.jpg"
+            "url": "./images/tuscany.jpg"
         },
         {
             "name": "Yellowstone National Park",
             "safety": "7/10",
             "cost": "$$",
             "rating": "8/10",
-            "src": "./images/yellowstone.jpg"
+            "url": "./images/yellowstone.jpg"
         }
     ],
 
@@ -127,21 +127,21 @@
             "safety": "6/10",
             "cost": "$$$$$",
             "rating": "6/10",
-            "src": "./images/rome.jpg"
+            "url": "./images/rome.jpg"
         },
         {
             "name": "Great Wall of China",
             "safety": "3/10",
             "cost": "$$$$$",
             "rating": "3/10",
-            "src": "./images/greatWall.jpg"
+            "url": "./images/greatWall.jpg"
         },
         {
             "name": "Machu Picchu",
             "safety": "7/10",
             "cost": "$$$$",
             "rating": "8/10",
-            "src": "./images/machu.jpg"
+            "url": "./images/machu.jpg"
         }
     ]
 
