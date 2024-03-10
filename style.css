@@ -195,5 +195,7 @@ opacity: 90%;
   gap: 2rem;
 }
 
-
+.subImage{
+  display: inline-block;
+}
 

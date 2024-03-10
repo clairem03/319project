@@ -13,7 +13,7 @@
             "safety": "8/10",
             "cost": "$$$$$",
             "rating": "8/10",
-            "url": "./images/Toyko.jpg"
+            "url": "./images/tokyo.jpg"
         },
         {
             "name": "London",
@@ -73,7 +73,7 @@
         }
     ],
 
-    "costal": [
+    "coastal": [
         {
             "name": "Cape Cod",
             "safety": "9/10",
