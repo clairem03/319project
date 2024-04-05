@@ -21,7 +21,6 @@ const ShoppingApp = () => {
   };
 
   // Function to remove item from cart
-  //removes items from the cart
   const removeFromCart = (el) => {
     let itemFound = false;
     const updatedCart = cart.filter((cartItem) => {
@@ -74,7 +73,7 @@ const ShoppingApp = () => {
     item.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  const listItems = items.map((el) => (
+  const listItems = filteredItems.map((el) => (
     // PRODUCT
     <div class="row border-top border-bottom" key={el.id}>
       <div class="row main align-items-center">
@@ -107,45 +106,65 @@ const ShoppingApp = () => {
     </div>
   ));
 
-  // JSX for cart view
-  const cartView = (
-    <div className="container">
-      <h2>Shopping Cart</h2>
-      <button className="btn btn-primary" onClick={() => setView("browse")}>
-        Back to Browse
-      </button>
-      {cart.map((item) => (
-        <div className="row" key={item.id}>
-          <div className="col-md-4">
-            <img
-              className="img-fluid"
-              src={item.image}
-              alt={item.title}
-              style={{ maxWidth: "150px" }}
-            />
-          </div>
-          <div className="col-md-8">
-            <div className="row">
-              <div className="col">{item.title}</div>
-              <div className="col">${item.price}</div>
-              <div className="col">
-                <button
-                  className="btn btn-danger"
-                  onClick={() => removeFromCart(item)}
-                >
-                  Remove
-                </button>
-              </div>
+// JSX for cart view
+const cartView = (
+  <div className="container">
+    <h2>Shopping Cart</h2>
+    <button className="btn btn-primary" onClick={() => setView("browse")}>
+      Back to Browse
+    </button>
+    {cart.map((item) => (
+      <div className="row" key={item.id}>
+        <div className="col-md-4">
+          <img
+            className="img-fluid"
+            src={item.image}
+            alt={item.title}
+            style={{ maxWidth: "150px" }}
+          />
+        </div>
+        <div className="col-md-8">
+          <div className="row">
+            <div className="col">{item.title}</div>
+            <div className="col">${item.price}</div>
+            <div className="col">
+              <button
+                className="btn btn-danger"
+                onClick={() => removeFromCart(item)}
+              >
+                Remove
+              </button>
             </div>
           </div>
         </div>
-      ))}
-      <p>Total: ${cartTotal}</p>
-      <button className="btn btn-success" onClick={goToConfirmation}>
-        Proceed to Confirmation
-      </button>
+      </div>
+    ))}
+    <p>Total: ${cartTotal}</p>
+    <div className="checkout-form">
+      <h3>Checkout</h3>
+      <form>
+        <div className="mb-3">
+          <label htmlFor="fullName" className="form-label">Full Name</label>
+          <input type="text" className="form-control" id="fullName" required />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="email" className="form-label">Email Address</label>
+          <input type="email" className="form-control" id="email" required />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="cardNumber" className="form-label">Credit Card Number</label>
+          <input type="text" className="form-control" id="cardNumber" required />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="address" className="form-label">Shipping Address</label>
+          <textarea className="form-control" id="address" rows="3" required></textarea>
+        </div>
+        <button type="submit" className="btn btn-success">Place Order</button>
+      </form>
     </div>
-  );
+  </div>
+);
+
 
   // JSX for confirmation view
   const confirmationView = (
