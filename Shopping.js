@@ -20,6 +20,17 @@ const ShoppingApp = () => {
     setCart([...cart, el]);
   };
 
+  //data for the form
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    cardNumber: "",
+    address: "",
+    city: "",
+    state: "",
+    zipCode: "",
+  });
+
   // Function to remove item from cart
   const removeFromCart = (el) => {
     let itemFound = false;
@@ -44,8 +55,8 @@ const ShoppingApp = () => {
     setView("confirmation");
   };
 
-  const goBackToCart = () => {
-    setView("cart");
+  const goToBrowse = () => {
+    setView("browse");
   };
 
   // Calculate total cart value
@@ -106,72 +117,232 @@ const ShoppingApp = () => {
     </div>
   ));
 
-// JSX for cart view
-const cartView = (
-  <div className="container">
-    <h2>Shopping Cart</h2>
-    <button className="btn btn-primary" onClick={() => setView("browse")}>
-      Back to Browse
-    </button>
-    {cart.map((item) => (
-      <div className="row" key={item.id}>
-        <div className="col-md-4">
-          <img
-            className="img-fluid"
-            src={item.image}
-            alt={item.title}
-            style={{ maxWidth: "150px" }}
+  //keeps the data from the form and displays it
+  function OrderForm() {
+    //submit handler
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      setView("confirmation");
+    };
+
+    const handleBlur = (event) => {
+      // Update the state only when leaving the input field
+      const { name, value } = event.target;
+      setFormData({ ...formData, [name]: value });
+    };
+
+    //change handler
+    const handleChange = (event) => {
+      const { name, value } = event.target;
+      setFormData({ ...formData, [name]: value });
+      event.preventDefault();
+    };
+
+    return (
+      <form onSubmit={handleSubmit}>
+        <div className="mb-3">
+          <label htmlFor="fullName" className="form-label">
+            Full Name
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="fullName"
+            name="fullName"
+            value={formData.fullName}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            required
           />
         </div>
-        <div className="col-md-8">
-          <div className="row">
-            <div className="col">{item.title}</div>
-            <div className="col">${item.price}</div>
-            <div className="col">
-              <button
-                className="btn btn-danger"
-                onClick={() => removeFromCart(item)}
-              >
-                Remove
-              </button>
+
+        <div className="mb-3">
+          <label htmlFor="email" className="form-label">
+            Email Address
+          </label>
+          <input
+            type="email"
+            className="form-control"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            required
+          />
+        </div>
+
+        <div className="mb-3">
+          <label htmlFor="cardNumber" className="form-label">
+            Credit Card Number
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="cardNumber"
+            name="cardNumber"
+            value={formData.cardNumber}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            pattern="^[0-9]{15,16}$"
+            title="Please enter a 15-16 digit number"
+            required
+          />
+        </div>
+
+        <div className="mb-3">
+          <label htmlFor="address" className="form-label">
+            Shipping Address
+          </label>
+          <textarea
+            className="form-control"
+            id="address"
+            name="address"
+            rows="3"
+            value={formData.address}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            required
+          ></textarea>
+        </div>
+
+        <div className="mb-3">
+          <label htmlFor="city" className="form-label">
+            City
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="city"
+            name="city"
+            value={formData.city}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            required
+          />
+        </div>
+
+        <div className="mb-3">
+          <label htmlFor="state" className="form-label">
+            State
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="state"
+            name="state"
+            value={formData.state}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            required
+          />
+        </div>
+
+        <div className="mb-3">
+          <label htmlFor="zip-code" className="form-label">
+            Zip Code
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="zip-code"
+            name="zipCode"
+            value={formData.zipCode}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            pattern="[0-9]{5}"
+            title="Please enter a five digit number"
+            required
+          />
+        </div>
+
+        <button type="submit" className="btn btn-success">
+          Place Order
+        </button>
+      </form>
+    );
+  }
+
+  // JSX for cart view
+  const cartView = (
+    <div className="container">
+      <h2>Shopping Cart</h2>
+      <button className="btn btn-primary" onClick={goToBrowse}>
+        Back to Browse
+      </button>
+      {cart.map((item) => (
+        <div className="row" key={item.id}>
+          <div className="col-md-4">
+            <img
+              className="img-fluid"
+              src={item.image}
+              alt={item.title}
+              style={{ maxWidth: "150px" }}
+            />
+          </div>
+          <div className="col-md-8">
+            <div className="row">
+              <div className="col">{item.title}</div>
+              <div className="col">${item.price}</div>
+              <div className="col">
+                <button
+                  className="btn btn-danger"
+                  onClick={() => removeFromCart(item)}
+                >
+                  Remove
+                </button>
+              </div>
             </div>
           </div>
         </div>
+      ))}
+      <p>Total: ${cartTotal}</p>
+      <div className="checkout-form">
+        <h3>Checkout</h3>
+        <OrderForm />
       </div>
-    ))}
-    <p>Total: ${cartTotal}</p>
-    <div className="checkout-form">
-      <h3>Checkout</h3>
-      <form>
-        <div className="mb-3">
-          <label htmlFor="fullName" className="form-label">Full Name</label>
-          <input type="text" className="form-control" id="fullName" required />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="email" className="form-label">Email Address</label>
-          <input type="email" className="form-control" id="email" required />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="cardNumber" className="form-label">Credit Card Number</label>
-          <input type="text" className="form-control" id="cardNumber" required />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="address" className="form-label">Shipping Address</label>
-          <textarea className="form-control" id="address" rows="3" required></textarea>
-        </div>
-        <button type="submit" className="btn btn-success">Place Order</button>
-      </form>
     </div>
-  </div>
-);
-
+  );
 
   // JSX for confirmation view
   const confirmationView = (
     <div className="container">
       <h2>Confirmation</h2>
-      <p>Your order has been confirmed!</p>
-      <button className="btn btn-primary" onClick={goBackToCart}>
+
+      <p>Thank you {formData.fullName} Your order has been confirmed!</p>
+      <h3>Review Information</h3>
+      <h4>Total Cost: ${cartTotal}</h4>
+      <p>
+        Items Purchased{" "}
+        {cart.map((item) => (
+          <div className="row" key={item.id}>
+            <div className="col-md-4">
+              <img
+                className="img-fluid"
+                src={item.image}
+                alt={item.title}
+                style={{ maxWidth: "150px" }}
+              />
+            </div>
+            <div className="col-md-8">
+              <div className="row">
+                <div className="col">{item.title}</div>
+                <div className="col">${item.price}</div>
+                <div className="col"></div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </p>
+      <h4>Information</h4>
+      <p>Name: {formData.fullName}</p>
+      <p>Email: {formData.email}</p>
+      <p>Credit Card: ****************</p>
+      <p>Shipping Address: {formData.address}</p>
+      <p>City: {formData.city}</p>
+      <p>State: {formData.state}</p>
+      <p>Zip Code: {formData.zipCode}</p>
+      <button className="btn btn-primary" onClick={goToBrowse}>
         Back to Cart
       </button>
     </div>
