@@ -56,8 +56,11 @@ const ShoppingApp = () => {
   };
 
   const goToBrowse = () => {
+    if (view === "confirmation") {
+    setCart([]);
+    }
     setView("browse");
-  };
+  }; 
 
   // Calculate total cart value
   useEffect(() => {
@@ -347,6 +350,8 @@ const ShoppingApp = () => {
       </button>
     </div>
   );
+
+  
 
   // JSX for browse view
   const browseView = (
