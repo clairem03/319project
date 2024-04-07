@@ -57,10 +57,10 @@ const ShoppingApp = () => {
 
   const goToBrowse = () => {
     if (view === "confirmation") {
-    setCart([]);
+      setCart([]);
     }
     setView("browse");
-  }; 
+  };
 
   // Calculate total cart value
   useEffect(() => {
@@ -121,150 +121,24 @@ const ShoppingApp = () => {
   ));
 
   //keeps the data from the form and displays it
-  function OrderForm() {
-    //submit handler
-    const handleSubmit = (event) => {
-      event.preventDefault();
-      setView("confirmation");
-    };
+  //submit handler
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setView("confirmation");
+  };
 
-    const handleBlur = (event) => {
-      // Update the state only when leaving the input field
-      const { name, value } = event.target;
-      setFormData({ ...formData, [name]: value });
-    };
+  const handleBlur = (event) => {
+    // Update the state only when leaving the input field
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
+  };
 
-    //change handler
-    const handleChange = (event) => {
-      const { name, value } = event.target;
-      setFormData({ ...formData, [name]: value });
-      event.preventDefault();
-    };
-
-    return (
-      <form onSubmit={handleSubmit}>
-        <div className="mb-3">
-          <label htmlFor="fullName" className="form-label">
-            Full Name
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="fullName"
-            name="fullName"
-            value={formData.fullName}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            required
-          />
-        </div>
-
-        <div className="mb-3">
-          <label htmlFor="email" className="form-label">
-            Email Address
-          </label>
-          <input
-            type="email"
-            className="form-control"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            required
-          />
-        </div>
-
-        <div className="mb-3">
-          <label htmlFor="cardNumber" className="form-label">
-            Credit Card Number
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="cardNumber"
-            name="cardNumber"
-            value={formData.cardNumber}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            pattern="^[0-9]{15,16}$"
-            title="Please enter a 15-16 digit number"
-            required
-          />
-        </div>
-
-        <div className="mb-3">
-          <label htmlFor="address" className="form-label">
-            Shipping Address
-          </label>
-          <textarea
-            className="form-control"
-            id="address"
-            name="address"
-            rows="3"
-            value={formData.address}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            required
-          ></textarea>
-        </div>
-
-        <div className="mb-3">
-          <label htmlFor="city" className="form-label">
-            City
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="city"
-            name="city"
-            value={formData.city}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            required
-          />
-        </div>
-
-        <div className="mb-3">
-          <label htmlFor="state" className="form-label">
-            State
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="state"
-            name="state"
-            value={formData.state}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            required
-          />
-        </div>
-
-        <div className="mb-3">
-          <label htmlFor="zip-code" className="form-label">
-            Zip Code
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="zip-code"
-            name="zipCode"
-            value={formData.zipCode}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            pattern="[0-9]{5}"
-            title="Please enter a five digit number"
-            required
-          />
-        </div>
-
-        <button type="submit" className="btn btn-success">
-          Place Order
-        </button>
-      </form>
-    );
-  }
+  //change handler
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
+    event.preventDefault();
+  };
 
   // JSX for cart view
   const cartView = (
@@ -302,7 +176,127 @@ const ShoppingApp = () => {
       <p>Total: ${cartTotal}</p>
       <div className="checkout-form">
         <h3>Checkout</h3>
-        <OrderForm />
+        <form onSubmit={handleSubmit}>
+          <div className="mb-3">
+            <label htmlFor="fullName" className="form-label">
+              Full Name
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="fullName"
+              name="fullName"
+              value={formData.fullName}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              required
+            />
+          </div>
+
+          <div className="mb-3">
+            <label htmlFor="email" className="form-label">
+              Email Address
+            </label>
+            <input
+              type="email"
+              className="form-control"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              required
+            />
+          </div>
+
+          <div className="mb-3">
+            <label htmlFor="cardNumber" className="form-label">
+              Credit Card Number
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="cardNumber"
+              name="cardNumber"
+              value={formData.cardNumber}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              pattern="^[0-9]{15,16}$"
+              title="Please enter a 15-16 digit number"
+              required
+            />
+          </div>
+
+          <div className="mb-3">
+            <label htmlFor="address" className="form-label">
+              Shipping Address
+            </label>
+            <textarea
+              className="form-control"
+              id="address"
+              name="address"
+              rows="3"
+              value={formData.address}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              required
+            ></textarea>
+          </div>
+
+          <div className="mb-3">
+            <label htmlFor="city" className="form-label">
+              City
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="city"
+              name="city"
+              value={formData.city}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              required
+            />
+          </div>
+
+          <div className="mb-3">
+            <label htmlFor="state" className="form-label">
+              State
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="state"
+              name="state"
+              value={formData.state}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              required
+            />
+          </div>
+
+          <div className="mb-3">
+            <label htmlFor="zip-code" className="form-label">
+              Zip Code
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="zip-code"
+              name="zipCode"
+              value={formData.zipCode}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              pattern="[0-9]{5}"
+              title="Please enter a five digit number"
+              required
+            />
+          </div>
+
+          <button type="submit" className="btn btn-success">
+            Place Order
+          </button>
+        </form>
       </div>
     </div>
   );
@@ -346,12 +340,10 @@ const ShoppingApp = () => {
       <p>State: {formData.state}</p>
       <p>Zip Code: {formData.zipCode}</p>
       <button className="btn btn-primary" onClick={goToBrowse}>
-        Back to Cart
+        Start a new order
       </button>
     </div>
   );
-
-  
 
   // JSX for browse view
   const browseView = (
@@ -376,6 +368,12 @@ const ShoppingApp = () => {
                   />
                 </div>
                 <div class="col align-self-center text-right text-muted">
+                  <div class="float-end">
+                    <p class="mb-0 me-5 d-flex align-items-center">
+                      <span class="small text-muted me-2">Order total:</span>
+                      <span class="lead fw-normal">${cartTotal}</span>
+                    </p>
+                  </div>
                   Products selected {cart.length}
                 </div>
                 <div>
@@ -386,12 +384,6 @@ const ShoppingApp = () => {
               </div>
             </div>
             <div>{listItems}</div>
-          </div>
-          <div class="float-end">
-            <p class="mb-0 me-5 d-flex align-items-center">
-              <span class="small text-muted me-2">Order total:</span>
-              <span class="lead fw-normal">${cartTotal}</span>
-            </p>
           </div>
         </div>
       </div>
