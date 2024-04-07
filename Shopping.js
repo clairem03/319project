@@ -58,6 +58,7 @@ const ShoppingApp = () => {
   const goToBrowse = () => {
     if (view === "confirmation") {
       setCart([]);
+      setFormData([]);
     }
     setView("browse");
   };
